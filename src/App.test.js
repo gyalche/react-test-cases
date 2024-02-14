@@ -68,9 +68,16 @@ import App from './App';
 //   })
 // })
 
-test("change event testing", () => {
+// test("change event testing", () => {
+//   render(<App />);
+//   const input = screen.getByRole("textbox");
+//   fireEvent.change(input, { target: { value: 'a' } });
+//   expect(input.value).toBe('a')
+// })
+
+test("click event test case", () => {
   render(<App />);
-  const input = screen.getByRole("textbox");
-  fireEvent.change(input, { target: { value: 'a' } });
-  expect(input.value).toBe('a')
+  const btn = screen.getByRole("button");
+  fireEvent.click(btn);
+  expect(screen.getByText("update")).toBeInTheDocument();
 })
