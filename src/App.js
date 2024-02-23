@@ -7,6 +7,7 @@ import About from './About';
 import Blog from './Blog';
 import Navbar from './Navbar';
 import { ThemeProvider } from './theme-context';
+import AdsComponent from './adsComponent';
 function App() {
   const [data, setData] = useState("")
 
@@ -21,6 +22,7 @@ function App() {
         {/* navbar */}
         <Navbar />
         {/* routes */}
+        <AdsComponent dataAdSlot='X7XXXXXX5X' />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

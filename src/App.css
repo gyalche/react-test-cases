@@ -65,14 +65,14 @@ h1{
   background-color:#ccc;
   transition:0.4s;
   border-radius:20px;
-
 }
+
 .mode-switch input:checked + .slider{
   background-color: #2196f3;
 }
 
 .mode-switch .slider:before{
-  position:absolute;
+  position:relative;
   content:'';
   height:16px;
   width:16px;
@@ -82,6 +82,7 @@ h1{
   transition:0.4s;
   border-radius:50%;
 }
+
 .mode-switch input:checked + .slider:before{
   transform:translateX(20px)
 }
