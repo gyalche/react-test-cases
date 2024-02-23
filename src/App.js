@@ -9,14 +9,10 @@ import Navbar from './Navbar';
 import { ThemeProvider } from './theme-context';
 import AdsComponent from './adsComponent';
 function App() {
-  const [data, setData] = useState("")
+
 
   return (
-    // <div className="App">
-    //   <p>Test Click event with button</p>
-    //   <button onClick={() => setData("update")}>update data</button>
-    //   <h1>{data}</h1>
-    // </div>
+
     <ThemeProvider>
       <BrowserRouter>
         {/* navbar */}

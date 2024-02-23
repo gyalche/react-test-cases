@@ -1,5 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
+import Home from './Home';
+import { cleanDb } from './service';
 
 // test("Test for react app", () => {
 //   render(<App />);
@@ -75,8 +77,42 @@ import App from './App';
 //   expect(input.value).toBe('a')
 // })
 
+//before all
+beforeAll(() => {
+  console.log('before all running')
+})
+
+//beforeEach
+beforeEach(() => {
+  console.log("before each running")
+})
+
+//after all
+afterAll(() => {
+  console.log("after all running")
+})
+
+//after each;
+afterEach(() => {
+  console.log("after each running")
+  cleanDb()
+})
+
+
 test("click event test case", () => {
-  render(<App />);
+  render(<Home />);
+  const btn = screen.getByRole("button");
+  fireEvent.click(btn);
+  expect(screen.getByText("update")).toBeInTheDocument();
+})
+test("click event test case1", () => {
+  render(<Home />);
+  const btn = screen.getByRole("button");
+  fireEvent.click(btn);
+  expect(screen.getByText("update")).toBeInTheDocument();
+})
+test("click event test case2", () => {
+  render(<Home />);
   const btn = screen.getByRole("button");
   fireEvent.click(btn);
   expect(screen.getByText("update")).toBeInTheDocument();

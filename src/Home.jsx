@@ -1,12 +1,12 @@
 import React from 'react'
-
-const newLocal = <div className="page">
-  <h1>HOME PAGE</h1>
-  <p>Welcome to home page</p>
-</div>
 const Home = () => {
+  const [data, setData] = React.useState("") 
   return (
-    newLocal
+    <div>
+    <p>Test Click event with button</p>
+    <button onClick={() => setData("update")}>update data</button>
+    <h1>{data}</h1>
+    </div>
   )
 }
 
