@@ -2,7 +2,9 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 import Home from './Home';
 import { cleanDb } from './service';
-
+import renderer from 'react-test-renderer'
+import User from './User';
+import About from './About';
 // test("Test for react app", () => {
 //   render(<App />);
 //   const text = screen.getByText(/First React Test Case/i);
@@ -77,43 +79,61 @@ import { cleanDb } from './service';
 //   expect(input.value).toBe('a')
 // })
 
+
+
 //before all
-beforeAll(() => {
-  console.log('before all running')
-})
+// beforeAll(() => {
+//   console.log('before all running')
+// })
+// 
+// //beforeEach
+// beforeEach(() => {
+//   console.log("before each running")
+// })
+// 
+// //after all
+// afterAll(() => {
+//   console.log("after all running")
+// })
+// 
+// //after each;
+// afterEach(() => {
+//   console.log("after each running")
+//   cleanDb()
+// })
+// 
+// test("click event test case", () => {
+//   render(<Home />);
+//   const btn = screen.getByRole("button");
+//   fireEvent.click(btn);
+//   expect(screen.getByText("update")).toBeInTheDocument();
+// })
+// test("click event test case1", () => {
+//   render(<Home />);
+//   const btn = screen.getByRole("button");
+//   fireEvent.click(btn);
+//   expect(screen.getByText("update")).toBeInTheDocument();
+// })
+// test("click event test case2", () => {
+//   render(<Home />);
+//   const btn = screen.getByRole("button");
+//   fireEvent.click(btn);
+//   expect(screen.getByText("update")).toBeInTheDocument();
+// })
 
-//beforeEach
-beforeEach(() => {
-  console.log("before each running")
-})
+// test('snapshot for home component', () => {
+//   const container = render(<Home />);
+//   expect(container).toMatchSnapshot();
+// })
 
-//after all
-afterAll(() => {
-  console.log("after all running")
-})
+// test("class component methods testing", () => {
+//   const componentData = renderer.create(<User />).getInstance()
+//   expect(componentData.getUserList("match")).toMatch("match")
+// })
 
-//after each;
-afterEach(() => {
-  console.log("after each running")
-  cleanDb()
-})
-
-
-test("click event test case", () => {
-  render(<Home />);
-  const btn = screen.getByRole("button");
-  fireEvent.click(btn);
-  expect(screen.getByText("update")).toBeInTheDocument();
-})
-test("click event test case1", () => {
-  render(<Home />);
-  const btn = screen.getByRole("button");
-  fireEvent.click(btn);
-  expect(screen.getByText("update")).toBeInTheDocument();
-})
-test("click event test case2", () => {
-  render(<Home />);
-  const btn = screen.getByRole("button");
-  fireEvent.click(btn);
-  expect(screen.getByText("update")).toBeInTheDocument();
+test("render about button", () => {
+  render(<About />);
+  const btn = screen.getByRole("button")
+  fireEvent.click(btn)
+  expect(screen.getByText("data")).toBeInTheDocument()
 })

@@ -8,6 +8,7 @@ import Blog from './Blog';
 import Navbar from './Navbar';
 import { ThemeProvider } from './theme-context';
 import AdsComponent from './adsComponent';
+import User from './User';
 function App() {
 
 
@@ -23,7 +24,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
-
+          <Route path="/user" element={<User />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
