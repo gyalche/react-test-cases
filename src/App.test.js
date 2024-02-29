@@ -108,12 +108,14 @@ import About from './About';
 //   fireEvent.click(btn);
 //   expect(screen.getByText("update")).toBeInTheDocument();
 // })
+
 // test("click event test case1", () => {
 //   render(<Home />);
 //   const btn = screen.getByRole("button");
 //   fireEvent.click(btn);
 //   expect(screen.getByText("update")).toBeInTheDocument();
 // })
+
 // test("click event test case2", () => {
 //   render(<Home />);
 //   const btn = screen.getByRole("button");
@@ -133,7 +135,7 @@ import About from './About';
 
 test("render about button", () => {
   render(<About />);
-  const btn = screen.getByRole("button")
-  fireEvent.click(btn)
-  expect(screen.getByText("data")).toBeInTheDocument()
+  const btn = screen.getByRole("button");
+  fireEvent.click(btn);
+  expect(screen.getByText("data")).toBeInTheDocument();
 })
