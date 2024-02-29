@@ -5,6 +5,7 @@ import { cleanDb } from './service';
 import renderer from 'react-test-renderer'
 import User from './User';
 import About from './About';
+import { otherMethodTest } from './helper';
 // test("Test for react app", () => {
 //   render(<App />);
 //   const text = screen.getByText(/First React Test Case/i);
@@ -133,9 +134,20 @@ import About from './About';
 //   expect(componentData.getUserList("match")).toMatch("match")
 // })
 
-test("render about button", () => {
+// test("render about button", () => {
+//   render(<About />);
+//   const btn = screen.getByRole("button");
+//   fireEvent.click(btn);
+//   expect(screen.getByText("data")).toBeInTheDocument();
+// })
+
+test("function component method testing case1", () => {
   render(<About />);
-  const btn = screen.getByRole("button");
+  const btn = screen.getByTestId('btn1');
   fireEvent.click(btn);
   expect(screen.getByText("data")).toBeInTheDocument();
+})
+
+test("method test case 2", () => {
+  expect(otherMethodTest(2, 2)).toBe(4)
 })
