@@ -6,6 +6,7 @@ import renderer from 'react-test-renderer'
 import User from './User';
 import About from './About';
 import { otherMethodTest } from './helper';
+import Blog from './Blog';
 // test("Test for react app", () => {
 //   render(<App />);
 //   const text = screen.getByText(/First React Test Case/i);
@@ -141,13 +142,27 @@ import { otherMethodTest } from './helper';
 //   expect(screen.getByText("data")).toBeInTheDocument();
 // })
 
-test("function component method testing case1", () => {
-  render(<About />);
-  const btn = screen.getByTestId('btn1');
-  fireEvent.click(btn);
-  expect(screen.getByText("data")).toBeInTheDocument();
-})
+// test("function component method testing case1", () => {
+//   render(<About />);
+//   const btn = screen.getByTestId('btn1');
+//   fireEvent.click(btn);
+//   expect(screen.getByText("data")).toBeInTheDocument();
+// })
+// 
+// test("method test case 2", () => {
+//   expect(otherMethodTest(2, 2)).toBe(4)
+// })
 
-test("method test case 2", () => {
-  expect(otherMethodTest(2, 2)).toBe(4)
+//What is RTL QUERY?
+//=> it is used to test multiple element/
+
+test('get by role', () => {
+  render(<Blog />);
+  const inputField = screen.getByRole('textbox');
+  const btn = screen.getByRole('button');
+  expect(inputField).toBeInTheDocument();
+  expect(inputField).toHaveValue('hello');
+  expect(inputField).toHaveAttribute("type", "text");
+  expect(inputField).toBeDisabled();
+  expect(btn).toBeInTheDocument();
 })

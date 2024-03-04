@@ -3,8 +3,9 @@ import React from 'react'
 const Blog = () => {
   return (
     <div className="page">
-      <h1>Blog page</h1>
-      <p>Welcome to blog page</p>
+      <h1>GetByRole</h1>
+      <input type="text" defaultValue='hello' disabled/>
+      <button>submit</button>
     </div>
   )
 }
