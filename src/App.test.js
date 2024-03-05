@@ -148,13 +148,13 @@ import Blog from './Blog';
 //   fireEvent.click(btn);
 //   expect(screen.getByText("data")).toBeInTheDocument();
 // })
-// 
+
 // test("method test case 2", () => {
 //   expect(otherMethodTest(2, 2)).toBe(4)
 // })
 
-//What is RTL QUERY?
-//=> it is used to test multiple element/
+//What is RTL QUERY(React Testing Library query)?
+//=> it is used to find out ui element
 
 test('get by role', () => {
   render(<Blog />);
@@ -165,4 +165,4 @@ test('get by role', () => {
   expect(inputField).toHaveAttribute("type", "text");
   expect(inputField).toBeDisabled();
   expect(btn).toBeInTheDocument();
-})
+});
