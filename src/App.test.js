@@ -156,13 +156,28 @@ import Blog from './Blog';
 //What is RTL QUERY(React Testing Library query)?
 //=> it is used to find out ui element
 
-test('get by role', () => {
-  render(<Blog />);
-  const inputField = screen.getByRole('textbox');
-  const btn = screen.getByRole('button');
-  expect(inputField).toBeInTheDocument();
-  expect(inputField).toHaveValue('hello');
-  expect(inputField).toHaveAttribute("type", "text");
-  expect(inputField).toBeDisabled();
-  expect(btn).toBeInTheDocument();
-});
+// test('get by role', () => {
+//   render(<Blog />);
+//   const inputField = screen.getByRole('textbox');
+//   const btn = screen.getByRole('button');
+//   expect(inputField).toBeInTheDocument();
+//   expect(inputField).toHaveValue('hello');
+//   expect(inputField).toHaveAttribute("type", "text");
+//   expect(inputField).toBeDisabled();
+//   expect(btn).toBeInTheDocument();
+// });
+
+test('Get by role testing', () => {
+  render(<Home />);
+
+  const btn1 = screen.getByRole('button', { name: 'click me1' });
+  const btn2 = screen.getByRole('button', { name: 'click me2' });
+  const input = screen.getByRole('textbox', { name: 'username' });
+  const input2 = screen.getByRole('textbox', { name: 'userage' });
+  const dv1 = screen.getByRole('hello_world');
+  expect(dv1).toBeInTheDocument()
+  expect(btn1).toBeInTheDocument();
+  expect(btn2).toBeInTheDocument();
+  expect(input).toHaveAttribute("type", "text")
+  expect(input2).toBeInTheDocument();
+})
