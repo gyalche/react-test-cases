@@ -175,9 +175,11 @@ test('Get by role testing', () => {
   const input = screen.getByRole('textbox', { name: 'username' });
   const input2 = screen.getByRole('textbox', { name: 'userage' });
   const dv1 = screen.getByRole('hello_world');
-  expect(dv1).toBeInTheDocument()
+
+  expect(dv1).toBeInTheDocument();
   expect(btn1).toBeInTheDocument();
   expect(btn2).toBeInTheDocument();
-  expect(input).toHaveAttribute("type", "text")
+  expect(input).toHaveAttribute("type", "text");
   expect(input2).toBeInTheDocument();
+
 })
