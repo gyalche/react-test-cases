@@ -207,3 +207,18 @@ test("getAllByRole testing", () => {
   }
 
 })
+
+//getByLabelText;
+//=>
+test('getByLabelText testing', () => {
+  render(<Home />);
+
+  const input = screen.getByLabelText('username')
+  const checkBox = screen.getByLabelText("check")
+  expect(checkBox).toBeInTheDocument()
+  expect(checkBox).toBeChecked()
+  expect(checkBox).toHaveAttribute("type", "checkbox")
+
+  expect(input).toBeInTheDocument()
+  expect(input).toHaveValue('dawa')
+})

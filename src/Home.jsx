@@ -11,8 +11,8 @@ const Home = () => {
     <button>click me2</button>
     <label htmlFor="input1">username</label>
     <label htmlFor="input2">userage</label>
-    <input type="text" id="input1" />
-    <input type="text" id="input2" />
+    {/* <input type="text" id="input1" />
+    <input type="text" id="input2" /> */}
     <div role="hello_world"></div>
 
     <button>click me</button>
@@ -23,6 +23,13 @@ const Home = () => {
   <option value="">2</option>
   <option value="">3</option>
 </select>
+
+
+      <label htmlFor='user-name'>username</label>
+      <input type="text" id="user-name" defaultValue="dawa" />
+
+      <label htmlFor='user-check'>check</label>
+      <input type="checkbox" id="user-check" defaultValue="dawa" defaultChecked={true} />
 
     </div>
   )
