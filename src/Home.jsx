@@ -13,7 +13,16 @@ const Home = () => {
     <label htmlFor="input2">userage</label>
     <input type="text" id="input1" />
     <input type="text" id="input2" />
-<div role="hello_world"></div>
+    <div role="hello_world"></div>
+
+    <button>click me</button>
+    <button>click me</button>
+
+<select>
+  <option value="">1</option>
+  <option value="">2</option>
+  <option value="">3</option>
+</select>
 
     </div>
   )

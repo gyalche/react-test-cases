@@ -167,19 +167,43 @@ import Blog from './Blog';
 //   expect(btn).toBeInTheDocument();
 // });
 
-test('Get by role testing', () => {
+// test('Get by role testing', () => {
+//   render(<Home />);
+//   const btn1 = screen.getByRole('button', { name: 'click me1' });
+//   const btn2 = screen.getByRole('button', { name: 'click me2' });
+//   const input = screen.getByRole('textbox', { name: 'username' });
+//   const input2 = screen.getByRole('textbox', { name: 'userage' });
+//   const dv1 = screen.getByRole('hello_world');
+// 
+//   expect(dv1).toBeInTheDocument();
+//   expect(btn1).toBeInTheDocument();
+//   expect(btn2).toBeInTheDocument();
+//   expect(input).toHaveAttribute("type", "text");
+//   expect(input2).toBeInTheDocument();
+// 
+// })
+
+//getByRole and getAllByRole difference;
+//=> getByRole is used for single element testing
+//=>getAllByRole is used for multiple elements testing;
+//=>getByRole is cal also be used for multiple elements testing when we have different attribute, label
+//=>getAllByRole give a value in array element;
+test("getAllByRole testing", () => {
   render(<Home />);
+  const btn = screen.getAllByRole("button")
+  // expect(btn).toBeInTheDocument()
 
-  const btn1 = screen.getByRole('button', { name: 'click me1' });
-  const btn2 = screen.getByRole('button', { name: 'click me2' });
-  const input = screen.getByRole('textbox', { name: 'username' });
-  const input2 = screen.getByRole('textbox', { name: 'userage' });
-  const dv1 = screen.getByRole('hello_world');
+  //you can vive number of use loops;
+  // expect(btn[0]).toBeInTheDocument()
+  for (let i = 0; i < btn.length - 1; i++) {
+    expect(btn[i]).toBeInTheDocument()
+  }
 
-  expect(dv1).toBeInTheDocument();
-  expect(btn1).toBeInTheDocument();
-  expect(btn2).toBeInTheDocument();
-  expect(input).toHaveAttribute("type", "text");
-  expect(input2).toBeInTheDocument();
+
+  //testing for option;
+  const options = screen.getAllByRole("option");
+  for (let i = 0; i < options.length; i++) {
+    expect(options[i]).toBeInTheDocument()
+  }
 
 })
