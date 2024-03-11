@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const cusomeThrottle = (value, delay) => {
+const CusomeThrottle = (value, delay) => {
   const [throttledValue, setThrottleValue] = useState(value);
 
   const lastTimer = useRef(Date.now());
@@ -25,4 +25,4 @@ const cusomeThrottle = (value, delay) => {
 }
 
 
-export default cusomeThrottle;
+export default CusomeThrottle;

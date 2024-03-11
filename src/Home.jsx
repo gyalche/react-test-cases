@@ -28,8 +28,11 @@ const Home = () => {
       <label htmlFor='user-name'>username</label>
       <input type="text" id="user-name" defaultValue="dawa" />
 
-      <label htmlFor='user-check'>check</label>
+      <label htmlFor='user-check'>username</label>
       <input type="checkbox" id="user-check" defaultValue="dawa" defaultChecked={true} />
+
+      <label htmlFor='user-check1'>username</label>
+      <input type="checkbox" id="user-check1" defaultValue="dawa" defaultChecked={true} />
 
     </div>
   )

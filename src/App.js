@@ -9,7 +9,8 @@ import Navbar from './Navbar';
 import { ThemeProvider } from './theme-context';
 import AdsComponent from './adsComponent';
 import User from './User';
-import cusomeThrottle from './hooks/use-throttle';
+import CusomeThrottle from './hooks/use-throttle';
+import Cookies from 'js-cookie';
 function App() {
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -25,7 +26,9 @@ function App() {
     //any expensize operation or API call
   }
 
-  const customeThrottle = cusomeThrottle(handleResize, 10000)
+  Cookies.set('token', 'toosfasdfasdfdsfsf', { expires: 1 })
+
+  const customeThrottle = CusomeThrottle(handleResize, 10000)
   useEffect(() => {
     window.addEventListener('resize', customeThrottle)
 
@@ -34,9 +37,7 @@ function App() {
     }
   })
   return (
-
     <ThemeProvider>
-
       <BrowserRouter>
         {/* navbar */}
         <Navbar />
