@@ -1,12 +1,6 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from '@testing-library/react';
 import Home from './Home';
-import { cleanDb } from './service';
-import renderer from 'react-test-renderer'
-import User from './User';
 import About from './About';
-import { otherMethodTest } from './helper';
-import Blog from './Blog';
 // test("Test for react app", () => {
 //   render(<App />);
 //   const text = screen.getByText(/First React Test Case/i);
@@ -190,11 +184,10 @@ import Blog from './Blog';
 //=>getAllByRole give a value in array element;
 test("getAllByRole testing", () => {
   render(<Home />);
-  const btn = screen.getAllByRole("button")
-  // expect(btn).toBeInTheDocument()
-
-  //you can vive number of use loops;
-  // expect(btn[0]).toBeInTheDocument()
+  const btn = screen.getAllByRole("button");
+  // expect(btn).toBeInTheDocument();
+  // you can vive number of use loops;
+  // expect(btn[0]).toBeInTheDocument();
   for (let i = 0; i < btn.length - 1; i++) {
     expect(btn[i]).toBeInTheDocument()
   }
@@ -211,18 +204,14 @@ test("getAllByRole testing", () => {
 //=>
 // test('getByLabelText testing', () => {
 //   render(<Home />);
-// 
 //   const input = screen.getByLabelText('username')
 //   const checkBox = screen.getByLabelText("check")
 //   expect(checkBox).toBeInTheDocument()
 //   expect(checkBox).toBeChecked()
 //   expect(checkBox).toHaveAttribute("type", "checkbox")
-// 
 //   expect(input).toBeInTheDocument()
 //   expect(input).toHaveValue('dawa')
 // })
-
-
 
 //getAllByLabelText;
 
@@ -234,3 +223,48 @@ test("getAllByLabelText", () => {
   }
 })
 
+//getByPlaceHolderText; test only for one input field;
+// test('get by placholder text', () => {
+//   render(<Home />)
+// 
+//   const placeholderTest = screen.getByPlaceholderText("enter user name")
+//   expect(placeholderTest).toBeInTheDocument()
+// 
+// })
+
+//getAllByPlacholderText 
+test('get all by placholder text', () => {
+  render(<Home />);
+  const inputs = screen.getAllByPlaceholderText('enter user name')
+  for (let i = 0; i < inputs.length; i++) {
+    expect(inputs[i]).toBeInTheDocument()
+  }
+})
+
+//getByText
+// test("Get by text ", () => {
+//   render(<Home />);
+//   const getbytext = screen.getByText('submit');
+//   expect(getbytext).toBeInTheDocument()
+//    const pTag = screen.getByText('HELLOW WORLD DON');
+//    expect(pTag).toHaveClass('checking')
+// })
+
+//getAllByText
+test('getAllByText', () => {
+  render(<Home />);
+  const pTag = screen.getAllByText('HELLOW WORLD DON');
+  expect(pTag[0]).toHaveClass('checking')
+})
+
+//getByTestId and getAllByTestId;
+//getByTestId;
+test("Testing with testId", () => {
+  render(<About />);
+  const divId = screen.getByTestId("div-testid");
+  const id = screen.getAllByTestId("id-test");
+  expect(divId).toBeInTheDocument();
+  for (let i = 0; i < id.length; i++) {
+    expect(id[i]).toBeInTheDocument()
+  }
+})

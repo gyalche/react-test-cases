@@ -10,6 +10,10 @@ const About = () => {
       <button onClick={()=>setData("data")} data-testid="btn1">update</button>
       <button onClick={otherMethodTest}>print</button>
       <p>{data}</p>
+      <div data-testid="div-testid">Testing with test id</div>
+      <div data-testid="id-test">Testing with test id1</div>
+      <div data-testid="id-test">Testing with test id2</div>
+
     </div>
   )
 }

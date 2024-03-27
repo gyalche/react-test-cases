@@ -34,6 +34,15 @@ const Home = () => {
       <label htmlFor='user-check1'>username</label>
       <input type="checkbox" id="user-check1" defaultValue="dawa" defaultChecked={true} />
 
+<input type="text" placeholder="enter user name" />
+<input type="text" placeholder="enter user name" />
+<input type="text" placeholder="enter user name" />
+<input type="text" placeholder="enter user name" />
+
+<button>submit</button>
+
+<p className="checking">HELLOW WORLD DON</p>
+
     </div>
   )
 }
