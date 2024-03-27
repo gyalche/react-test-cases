@@ -17,6 +17,12 @@ const About = () => {
       <input type="text" defaultValue={"dawadon"} />
       <textarea name="" id="" cols="30" rows="10" defaultValue={"dawaisdon"}></textarea>
       <input type="radio" defaultValue={"dawadon"} />
+      <img src="" alt="myImage" />
+      <img src="" alt="imagetest" />
+      <img src="" alt="imagetest" />
+      <img src="" alt="imagetest" />
+
+      <input type="text" defaultValue={"dawa sherpa"} name="userName" className="test-style" id="user-name" />
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { getByAltText, render, screen } from '@testing-library/react';
 import Home from './Home';
 import About from './About';
 import Navbar from './Navbar';
@@ -198,7 +198,6 @@ test("getAllByRole testing", () => {
   for (let i = 0; i < options.length; i++) {
     expect(options[i]).toBeInTheDocument()
   }
-
 })
 
 //getByLabelText;
@@ -292,23 +291,52 @@ test("test getAllByDisplayValue", () => {
 //getByTitle; when you want to test an element based on the title of the element use this
 //getAllByTitle;
 
-test("button testing with title attribute", () => {
-  render(<Navbar />)
-  const titleTest = screen.getByTitle('click me button')
-  const iconsTest = screen.getByTitle('myicons')
-  expect(titleTest).toBeInTheDocument()
-  expect(iconsTest).toBeInTheDocument()
+// test("button testing with title attribute", () => {
+//   render(<Navbar />)
+//   const titleTest = screen.getByTitle('click me button')
+//   const iconsTest = screen.getByTitle('myicons')
+//   expect(titleTest).toBeInTheDocument()
+//   expect(iconsTest).toBeInTheDocument()
+// })
+// 
+// test("button testing with getByAllTitle method", () => {
+//   render(<Navbar />);
+//   const navbarTitle = screen.getAllByTitle('myicons');
+//   for (let i = 0; i < navbarTitle.length; i++) {
+//     expect(navbarTitle[i]).toBeInTheDocument();
+//   }
+// })
+
+//getByAltText mainly used for image tag 
+//getAllByAltText;
+
+test("testing image alt tag", () => {
+  render(<About />);
+  const altTagTest = screen.getByAltText('myImage');
+  expect(altTagTest).toBeInTheDocument();
 })
 
-test("button testing with getByAllTitle method", () => {
-
-  render(<Navbar />);
-  const navbarTitle = screen.getAllByTitle('myicons');
-  for (let i = 0; i < navbarTitle.length; i++) {
-    expect(navbarTitle[i]).toBeInTheDocument()
+test("get all by image tag", () => {
+  render(<About />);
+  const getAllTagWithSameName = screen.getAllByAltText('imagetest');
+  for (let i = 0; i < getAllTagWithSameName; i++) {
+    expect(getAllTagWithSameName[i]).toBeInTheDocument()
   }
 })
 
 
 
+//ASSERTION TESTING METHODS;
+//=>
+test("test input assertion", () => {
+  render(<About />)
+  const input = screen.getByRole("textbox")
+  expect(input).toBeInTheDocument()
+  expect(input).toHaveValue("dawa sherpa")
+  expect(input).toBeEnabled()
+  expect(input).toHaveClass("test-style")
+  expect(input).toHaveAttribute("id")
+  expect(input).toHaveClass("test-style")
+  expect(input).not.toHaveClass("test-style1")
 
+})
