@@ -6,6 +6,7 @@ const Navbar = () => {
   const theme=useTheme();
   console.log("mytheme", theme)
   return (
+    <>
     <nav className="nav">
       <div>
         <Link to='/'>Home</Link>
@@ -19,7 +20,16 @@ const Navbar = () => {
 
         </label>
       </div>
+      /*getByTitle testing*/
+
     </nav>
+    <button title="click me button">click</button>
+    <br />
+    <span title="myicons">icons</span>
+    <span title="myicons1">icons2</span>
+    <span title="myicons1">icons3</span>
+
+    </>
   )
 }
 

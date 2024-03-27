@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import Home from './Home';
 import About from './About';
+import Navbar from './Navbar';
 // test("Test for react app", () => {
 //   render(<App />);
 //   const text = screen.getByText(/First React Test Case/i);
@@ -265,6 +266,49 @@ test("Testing with testId", () => {
   const id = screen.getAllByTestId("id-test");
   expect(divId).toBeInTheDocument();
   for (let i = 0; i < id.length; i++) {
-    expect(id[i]).toBeInTheDocument()
+    expect(id[i]).toBeInTheDocument();
   }
 })
+
+//getByDisplayValue;
+//getAllByDisplayValue;
+
+test("test with display value", () => {
+  render(<About />);
+  // const valueTest = screen.getByDisplayValue("dawadon");
+  const textArea = screen.getByDisplayValue("dawaisdon");
+  // expect(valueTest).toBeInTheDocument();
+  expect(textArea).toBeInTheDocument()
+})
+
+test("test getAllByDisplayValue", () => {
+  render(<About />);
+  const valueall = screen.getAllByDisplayValue("dawadon");
+  for (let i = 0; i < valueall.length; i++) {
+    expect(valueall[i]).toBeInTheDocument()
+  }
+})
+
+//getByTitle; when you want to test an element based on the title of the element use this
+//getAllByTitle;
+
+test("button testing with title attribute", () => {
+  render(<Navbar />)
+  const titleTest = screen.getByTitle('click me button')
+  const iconsTest = screen.getByTitle('myicons')
+  expect(titleTest).toBeInTheDocument()
+  expect(iconsTest).toBeInTheDocument()
+})
+
+test("button testing with getByAllTitle method", () => {
+
+  render(<Navbar />);
+  const navbarTitle = screen.getAllByTitle('myicons');
+  for (let i = 0; i < navbarTitle.length; i++) {
+    expect(navbarTitle[i]).toBeInTheDocument()
+  }
+})
+
+
+
+

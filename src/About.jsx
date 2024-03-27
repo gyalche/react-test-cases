@@ -14,6 +14,9 @@ const About = () => {
       <div data-testid="id-test">Testing with test id1</div>
       <div data-testid="id-test">Testing with test id2</div>
 
+      <input type="text" defaultValue={"dawadon"} />
+      <textarea name="" id="" cols="30" rows="10" defaultValue={"dawaisdon"}></textarea>
+      <input type="radio" defaultValue={"dawadon"} />
     </div>
   )
 }
