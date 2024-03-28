@@ -55,7 +55,6 @@ import Navbar from './Navbar';
 //     render(<App />);
 //     let checkInput = screen.getByRole("textbox");
 //     expect(checkInput).toBeInTheDocument();
-// 
 //   })
 // 
 //   describe("inner test group", () => {
@@ -290,12 +289,11 @@ test("test getAllByDisplayValue", () => {
 
 //getByTitle; when you want to test an element based on the title of the element use this
 //getAllByTitle;
-
 // test("button testing with title attribute", () => {
 //   render(<Navbar />)
 //   const titleTest = screen.getByTitle('click me button')
 //   const iconsTest = screen.getByTitle('myicons')
-//   expect(titleTest).toBeInTheDocument()
+//   expect(titleTest).toBeInTheDocument()     
 //   expect(iconsTest).toBeInTheDocument()
 // })
 // 
@@ -324,8 +322,6 @@ test("get all by image tag", () => {
   }
 })
 
-
-
 //ASSERTION TESTING METHODS;
 //=>
 test("test input assertion", () => {
@@ -338,5 +334,26 @@ test("test input assertion", () => {
   expect(input).toHaveAttribute("id")
   expect(input).toHaveClass("test-style")
   expect(input).not.toHaveClass("test-style1")
+})
 
+//TextMatch with string and Regex;
+test("Text match with string", () => {
+  render(<About />)
+  // const div = screen.getByText("HELLOW WORLD", { exact: false });
+  const div = screen.getByText("HELLOW WORLD", { exact: true });
+  expect(div).toBeInTheDocument()
+})
+test("Text match with regex", () => {
+  render(<About />)
+  const div = screen.getByText(/hello/i);
+  expect(div).toBeInTheDocument()
+})
+
+//TextMatch with function;
+test("Test match with function", () => {
+  render(<About />);
+  // const dv = screen.getByText((content, element) => content.startsWith('Hellow'));
+  // const dv = screen.getByText((content, element) => content.endsWidth('world'));
+  const dv = screen.getByText((content, element) => content.includes('world'));
+  expect(dv).toBeInTheDocument()
 })

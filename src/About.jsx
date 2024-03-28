@@ -23,6 +23,7 @@ const About = () => {
       <img src="" alt="imagetest" />
 
       <input type="text" defaultValue={"dawa sherpa"} name="userName" className="test-style" id="user-name" />
+      <div>HELLOW WORLD</div>
     </div>
   )
 }
